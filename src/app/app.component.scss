@@ -1,0 +1,18 @@
+.page-header {
+  background-color: #2c3e50;
+  color: white;
+
+  h1 {
+    font-family: fantasy;
+    font-size: 32pt;
+  }
+}
+
+.page-body {
+  flex: 1 1 auto;
+  background-image: url("src/assets/page-background-tile.png");
+}
+
+.page-content {
+  background-color: #ecf0f1;
+}
