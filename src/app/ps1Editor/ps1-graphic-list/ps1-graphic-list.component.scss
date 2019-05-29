@@ -1,0 +1,37 @@
+@import 'color_palette';
+
+.ps1-edit-list {
+  border-radius: 5px;
+  overflow: scroll;
+
+  background-color: #bdc3c7;
+  min-height: 70px;
+  display:block;
+}
+
+.ps1-edit-list-scroll-padding {
+  background-color: $secondary-background;
+  display: inline-block;
+  min-width: 200px;
+  min-height: 50px;
+}
+
+.ps1-element {
+  display: inline-block;
+  border-radius: 10px;
+  background-color: $primary-background;
+  box-shadow: 2px 2px 5px #2c3e50;
+  min-width: 100px;
+  height: 50px;
+
+  span {
+    background-color: $primary-background;
+    overflow:visible;
+    min-width: 100px;
+    min-height: 40px;
+    font-size: 20pt;
+  }
+  span:focus {
+    outline: none;
+  }
+}
