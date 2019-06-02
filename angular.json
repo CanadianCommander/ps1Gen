@@ -28,14 +28,17 @@
             ],
             "stylePreprocessorOptions": {
               "includePaths": [
-                "src/scss/"
+                "src/scss/",
+                "./"
               ]
             },
             "styles": [
               "src/styles.scss",
               "node_modules/bootstrap/scss/bootstrap.scss"
             ],
-            "scripts": [],
+            "scripts": [
+               "node_modules/jquery/dist/jquery.min.js"
+            ],
             "es5BrowserSupport": true
           },
           "configurations": {
@@ -92,7 +95,9 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": [],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js"
+            ],
             "assets": [
               "src/favicon.ico",
               "src/assets"

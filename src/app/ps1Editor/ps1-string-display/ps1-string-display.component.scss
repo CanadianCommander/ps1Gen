@@ -1,0 +1,10 @@
+@import 'common_style';
+
+.ps1-string-display {
+  overflow: auto;
+  max-width: 50%;
+  min-height: 20pt;
+
+  background-color: $secondary-background;
+  display:block;
+}

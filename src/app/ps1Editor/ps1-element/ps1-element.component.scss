@@ -1,0 +1,42 @@
+@import 'common_style';
+
+.ps1-element {
+  display: inline-block;
+  border-radius: 10px;
+  background-color: $primary-background;
+  box-shadow: 2px 2px 5px #2c3e50;
+  min-width: 130px;
+  height: 80px;
+  transition: position 2s;
+
+  .element-text {
+    white-space: nowrap;
+    background-color: $primary-background;
+    overflow:visible;
+    flex-grow: 1;
+    min-width: 75px;
+    min-height: 40px;
+    font-size: 20pt;
+  }
+
+  .element-text:focus {
+    outline: none;
+  }
+
+  .element-control {
+    cursor: pointer;
+    color: $primary;
+  }
+
+  .element-control:active {
+    color: #2980b9;
+  }
+
+  .close-control:active {
+    color: #c0392b;
+  }
+
+  .move-control:active {
+    cursor:move;
+  }
+}

@@ -1,3 +1,20 @@
-<p>
-  ps1-element works!
-</p>
+<div class="ps1-element p-1 mr-2 d-flex flex-column">
+  <span class="d-flex border-bottom">
+    <ul class="nav col p-0">
+      <li class="nav-item col text-center p-0">
+        <fa-icon icon="arrows-alt" class="m-1 element-control move-control" size="lg"></fa-icon>
+      </li>
+      <li class="nav-item border-left border-right col text-center p-0">
+        <fa-icon icon="palette" class="m-1 element-control color-control" size="lg"></fa-icon>
+      </li>
+      <li class="nav-item border-right col text-center p-0">
+        <fa-icon icon="cog" class="m-1 element-control special-control" size="lg"></fa-icon>
+      </li>
+      <li class="nav-item col text-center p-0">
+        <fa-icon icon="times-circle" class="m-1 element-control close-control" size="lg" (click)="deleteSelf()"></fa-icon>
+      </li>
+    </ul>
+  </span>
+  <span class="rounded element-text" contenteditable="true"
+  (keydown)="createNewElementOnTab($event);preventNewLine($event)" (input)="updateText($event)"></span>
+</div>

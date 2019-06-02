@@ -1,8 +1,6 @@
-<div class="ps1-edit-list p-1 d-flex">
-  <div class="ps1-element p-1 mr-2 d-flex align-items-center">
-    <span class="rounded" contenteditable="true"></span>
-  </div>
-
+<button type="button" class="btn btn-secondary m-1" (click)="addElement()"> Add</button>
+<div class="ps1-edit-list p-1 d-flex" >
+  <app-ps1-editor-element *ngFor="let element of ps1Elements" [ps1Element]="element"></app-ps1-editor-element>
   <div class="ps1-edit-list-scroll-padding">
   </div>
 </div>
