@@ -1,11 +1,11 @@
-<div class="ps1-element p-1 mr-2 d-flex flex-column">
+<div id="ps1-element-{{elementIndex}}" class="ps1-element p-1 mr-2 d-flex flex-column" [style.border-color]="ps1Element.color.getCurrentCSSColor()" (mouseleave)="hideColorPicker()">
   <span class="d-flex border-bottom">
     <ul class="nav col p-0">
       <li class="nav-item col text-center p-0">
         <fa-icon icon="arrows-alt" class="m-1 element-control move-control" size="lg"></fa-icon>
       </li>
       <li class="nav-item border-left border-right col text-center p-0">
-        <fa-icon icon="palette" class="m-1 element-control color-control" size="lg"></fa-icon>
+        <fa-icon icon="palette" class="m-1 element-control color-control" size="lg" (click)="toggleColorPicker()"></fa-icon>
       </li>
       <li class="nav-item border-right col text-center p-0">
         <fa-icon icon="cog" class="m-1 element-control special-control" size="lg"></fa-icon>
@@ -15,6 +15,7 @@
       </li>
     </ul>
   </span>
-  <span class="rounded element-text" contenteditable="true"
-  (keydown)="createNewElementOnTab($event);preventNewLine($event)" (input)="updateText($event)"></span>
+  <div class="rounded element-text pr-2" contenteditable="true"
+  (keydown)="handleOnTab($event) && preventNewLine($event)" (input)="updateText($event)"></div>
+  <app-color-picker *ngIf="showColorPicker" [colorList]="ps1Element.color.getColorList()" [ps1Element]="ps1Element"></app-color-picker>
 </div>

@@ -1,5 +1,5 @@
+import { ColorPalette } from './color-palette';
 
 export class Ps1Element {
-  text: string = "";
-  color: string;
+  constructor(public text: string, public color: ColorPalette) {}
 }

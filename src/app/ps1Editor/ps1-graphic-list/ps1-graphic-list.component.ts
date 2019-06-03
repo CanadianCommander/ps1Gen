@@ -18,6 +18,14 @@ export class Ps1GraphicListComponent implements OnInit {
   }
 
   addElement() {
-    this.ps1Builder.addElement(new Ps1Element);
+    this.ps1Builder.addDefaultElement();
+  }
+
+  clearElements() {
+    let decision = confirm("Clear PS1 string?")
+    if (decision)
+    {
+      this.ps1Builder.deleteAllElements();
+    }
   }
 }

@@ -1,0 +1,28 @@
+@import 'common_style';
+
+.color-picker-container {
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid black;
+  background-color: $primary-background;
+  box-shadow: 5px 5px 5px black;
+
+  width: 1026px;
+  height: 258px;
+}
+
+.color-tile {
+  position: relative;
+  flex: 0 0 32px;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  z-index: 0;
+}
+
+.color-tile:hover {
+  border: 1px solid white;
+  box-shadow: 2px 2px 2px black;
+  z-index: 1;
+}

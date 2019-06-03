@@ -1,6 +1,7 @@
-<button type="button" class="btn btn-secondary m-1" (click)="addElement()"> Add</button>
-<div class="ps1-edit-list p-1 d-flex" >
-  <app-ps1-editor-element *ngFor="let element of ps1Elements" [ps1Element]="element"></app-ps1-editor-element>
+<button type="button" class="btn btn-danger mr-1 mb-1" (click)="clearElements()">Clear</button>
+<button type="button" class="btn btn-secondary mr-1 mb-1" (click)="addElement()">Add</button>
+<div class="ps1-edit-list p-1 d-flex mb-5" >
+  <app-ps1-editor-element *ngFor="let element of ps1Elements; index as i" [ps1Element]="element" [elementIndex]="i"></app-ps1-editor-element>
   <div class="ps1-edit-list-scroll-padding">
   </div>
 </div>

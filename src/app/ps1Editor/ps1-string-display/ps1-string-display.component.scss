@@ -2,8 +2,10 @@
 
 .ps1-string-display {
   overflow: auto;
-  max-width: 50%;
+  word-wrap: break-word;
+  max-width: 75%;
   min-height: 20pt;
+  font-size: 18pt;
 
   background-color: $secondary-background;
   display:block;

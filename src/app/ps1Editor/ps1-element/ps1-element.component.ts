@@ -10,17 +10,46 @@ import { Ps1BuilderService } from '../service/ps1-builder.service'
 })
 export class Ps1ElementComponent implements OnInit {
   @Input() ps1Element: Ps1Element;
+  @Input() elementIndex: number;
+  showColorPicker: boolean = false;
 
   constructor(private ps1Builder: Ps1BuilderService) { }
 
   ngOnInit() {
   }
 
-  createNewElementOnTab(event): void {
+  toggleColorPicker() {
+    this.showColorPicker = !this.showColorPicker;
+  }
+
+  handleOnTab(event): boolean {
     if (event.keyCode == 9)
     {
-      this.ps1Builder.addElement(new Ps1Element());
+      let myIndex = this.elementIndex;
+      let nextElement = $("#ps1-element-"+(myIndex+1));
+      if (nextElement.length != 0)
+      {
+        // nop. normal tab behavior will work
+        return true;
+      }
+      else
+      { // create new element
+        this.ps1Builder.addDefaultElement();
+        window.setTimeout(function () {
+          // attempt to focuse new element
+          let newElement = $("#ps1-element-"+(myIndex+1));
+          if (newElement.length != 0)
+          {
+            newElement.find(".element-text").first().focus();
+          }
+        }, 50);
+        return false;
+      }
     }
+  }
+
+  hideColorPicker(): void {
+    this.showColorPicker = false;
   }
 
   preventNewLine(event): boolean {
