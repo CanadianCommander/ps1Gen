@@ -10,22 +10,6 @@
   height: 76px;
   transition: position 2s;
 
-  .element-text {
-    white-space: nowrap;
-    background-color: $primary-background;
-    overflow:visible;
-    flex-grow: 1;
-    min-width: 75px;
-    min-height: 40px;
-    font-size: 20pt;
-
-    -webkit-user-select: text !important; -moz-user-select: text !important; -ms-user-select: text !important; user-select: text !important;
-  }
-
-  .element-text:focus {
-    outline: none;
-  }
-
   .element-control {
     cursor: pointer;
     color: $primary;

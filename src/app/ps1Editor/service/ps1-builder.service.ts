@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Ps1Element } from '../model/ps1-element';
 import { Ps1ColorPalette } from '../model/ps1-color-palette';
+import { Ps1ContentCollection } from '../model/ps1-content-collection'
 
 @Injectable({
   providedIn: 'root'
@@ -20,18 +21,18 @@ export class Ps1BuilderService {
     return this.elements.reduce((acc, el) => {
       if (el.color.isNoColor())
       { // no color
-        acc = acc + el.text
+        acc = acc + el.content.getCurrentContent().getTerminalCode();
       }
       else
       {
-        acc = acc + el.color.getCurrentTerminalColor() + el.text + el.color.getTerminalResetCode();
+        acc = acc + el.color.getCurrentTerminalColor() + el.content.getCurrentContent().getTerminalCode() + el.color.getTerminalResetCode();
       }
       return acc
     }, "");
   }
 
   addDefaultElement() {
-    this.elements.push(new Ps1Element("", new Ps1ColorPalette));
+    this.elements.push(new Ps1Element(new Ps1ContentCollection, new Ps1ColorPalette));
   }
 
   deleteElement(element) {

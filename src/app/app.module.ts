@@ -12,8 +12,12 @@ import { Ps1ElementComponent } from './ps1Editor/ps1-element/ps1-element.compone
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faArrowsAlt, faPalette, faCog, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
+
 import { Ps1StringDisplayComponent } from './ps1Editor/ps1-string-display/ps1-string-display.component';
 import { ColorPickerComponent } from './ps1Editor/color-picker/color-picker.component';
+import { TextContentComponent } from './ps1Editor/content/text-content/text-content.component';
+import { ContentLoaderComponent } from './ps1Editor/content/content-loader/content-loader.component';
+import { DynamicComponentDirective } from './directives/dynamic-component';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,10 @@ import { ColorPickerComponent } from './ps1Editor/color-picker/color-picker.comp
     Ps1GraphicListComponent,
     Ps1ElementComponent,
     Ps1StringDisplayComponent,
-    ColorPickerComponent
+    ColorPickerComponent,
+    TextContentComponent,
+    ContentLoaderComponent,
+    DynamicComponentDirective
   ],
   imports: [
     FormsModule,
@@ -30,6 +37,7 @@ import { ColorPickerComponent } from './ps1Editor/color-picker/color-picker.comp
     AppRoutingModule,
     FontAwesomeModule
   ],
+  entryComponents: [TextContentComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

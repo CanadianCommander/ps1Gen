@@ -52,14 +52,6 @@ export class Ps1ElementComponent implements OnInit {
     this.showColorPicker = false;
   }
 
-  preventNewLine(event): boolean {
-    return !(event.keyCode == 13);
-  }
-
-  updateText(event): void {
-    this.ps1Element.text = event.target.textContent;
-  }
-
   deleteSelf(): void {
     this.ps1Builder.deleteElement(this.ps1Element);
   }

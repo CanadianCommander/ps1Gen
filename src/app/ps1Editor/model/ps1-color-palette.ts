@@ -1,5 +1,6 @@
+import { ColorPalette } from "./color-palette"
 
-export class Ps1ColorPalette {
+export class Ps1ColorPalette implements ColorPalette{
   static readonly COLOR_MAP = [
     {color: "#ecf0f1", code: "\\e[0m"}, // no color
     {color: "#000000", code: "\\033[38;5;16m"},
