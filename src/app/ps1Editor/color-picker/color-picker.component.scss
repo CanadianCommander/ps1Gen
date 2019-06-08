@@ -3,6 +3,8 @@
 .color-picker-container {
   position: absolute;
   display: flex;
+  flex-direction: row;
+  align-content: baseline;
   flex-wrap: wrap;
   border: 1px solid black;
   background-color: $primary-background;

@@ -1,4 +1,4 @@
-<div class="color-picker-container">
+<div class="color-picker-container" [style.margin-left]="xOffset + 'px'" #colorPickerContainer>
   <div *ngFor="let color of colorList; index as i" class="color-tile" [attr.data-color-index]="i" [style.background-color]="color"
   (click)="setColor($event)"><div>
 </div>
