@@ -16,5 +16,5 @@
     </ul>
   </span>
   <app-color-picker *ngIf="showColorPicker" [colorList]="ps1Element.color.getColorList()" [ps1Element]="ps1Element"></app-color-picker>
-  <app-content-loader [ps1Element]="ps1Element"></app-content-loader>
+  <app-content-loader (keydown)="handleOnTab($event)" [ps1Element]="ps1Element"></app-content-loader>
 </div>
