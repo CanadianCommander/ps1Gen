@@ -1,0 +1,40 @@
+@import 'common_style';
+
+.content-picker-container {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: baseline;
+  align-content: baseline;
+
+  border-radius: 5px;
+  border: 1px solid darken($secondary-background, 10%);
+  background-color: $primary-background;
+  box-shadow: 5px 5px 5px black;
+
+  width: 512px;
+  height: 256px;
+
+  .content-picker-header {
+    flex: 0 0 100%;
+  }
+
+  h4 {
+    color: $primary;
+  }
+
+  button {
+    color: white;
+    background-color: $ps1-special-bg;
+    border-color: darken($ps1-special-bg, 10%);
+  }
+  button:active {
+    background-color: darken($ps1-special-bg, 20%);
+  }
+
+  .button-darkbg {
+    background-color: darken($ps1-special-bg, 10%);
+  }
+
+}

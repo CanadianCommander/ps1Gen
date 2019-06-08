@@ -12,6 +12,7 @@ export class Ps1ElementComponent implements OnInit {
   @Input() ps1Element: Ps1Element;
   @Input() elementIndex: number;
   showColorPicker: boolean = false;
+  showContentPicker: boolean = false;
 
   constructor(private ps1Builder: Ps1BuilderService) { }
 
@@ -20,6 +21,10 @@ export class Ps1ElementComponent implements OnInit {
 
   toggleColorPicker() {
     this.showColorPicker = !this.showColorPicker;
+  }
+
+  toggleContentPicker() {
+    this.showContentPicker = !this.showContentPicker
   }
 
   handleOnTab(event): boolean {

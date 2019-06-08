@@ -1,0 +1,10 @@
+<div class="content-picker-container p-1">
+  <div class="content-picker-header">
+    <h4 class="mb-0 font-weight-bold"> Select text / PS1 escape sequence </h4>
+    <hr class="mt-0 mb-1">
+  </div>
+  <button *ngFor="let content of contentList; index as i"
+  type="button" class="btn mr-1 mb-1" [class.button-darkbg]="i % 2 == 0" (click)="selectContent(content)">
+    {{content.getDescription()}}
+  </button>
+</div>

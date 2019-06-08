@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ContentComponent } from '../content-component'
 import { Ps1Element } from "../../model/ps1-element"
-import { TextContent } from '../../model/ps1-content-collection'
+import { TextContent } from '../../model/text-content'
 
 @Component({
   selector: 'app-text-content',

@@ -8,7 +8,7 @@
         <fa-icon icon="palette" class="m-1 element-control color-control" size="lg" (click)="toggleColorPicker()"></fa-icon>
       </li>
       <li class="nav-item border-right col text-center p-0">
-        <fa-icon icon="cog" class="m-1 element-control special-control" size="lg"></fa-icon>
+        <fa-icon icon="cog" class="m-1 element-control special-control" size="lg" (click)="toggleContentPicker()"></fa-icon>
       </li>
       <li class="nav-item col text-center p-0">
         <fa-icon icon="times-circle" class="m-1 element-control close-control" size="lg" (click)="deleteSelf()"></fa-icon>
@@ -16,5 +16,6 @@
     </ul>
   </span>
   <app-color-picker *ngIf="showColorPicker" [colorList]="ps1Element.color.getColorList()" [ps1Element]="ps1Element"></app-color-picker>
+  <app-content-picker *ngIf="showContentPicker" [ps1Element]="ps1Element"></app-content-picker>
   <app-content-loader (keydown)="handleOnTab($event)" [ps1Element]="ps1Element"></app-content-loader>
 </div>

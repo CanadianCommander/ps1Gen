@@ -18,6 +18,8 @@ import { ColorPickerComponent } from './ps1Editor/color-picker/color-picker.comp
 import { TextContentComponent } from './ps1Editor/content/text-content/text-content.component';
 import { ContentLoaderComponent } from './ps1Editor/content/content-loader/content-loader.component';
 import { DynamicComponentDirective } from './directives/dynamic-component';
+import { SpecialContentComponent } from './ps1Editor/content/special-content/special-content.component';
+import { ContentPickerComponent } from './ps1Editor/content-picker/content-picker.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { DynamicComponentDirective } from './directives/dynamic-component';
     ColorPickerComponent,
     TextContentComponent,
     ContentLoaderComponent,
-    DynamicComponentDirective
+    DynamicComponentDirective,
+    SpecialContentComponent,
+    ContentPickerComponent
   ],
   imports: [
     FormsModule,
@@ -37,7 +41,7 @@ import { DynamicComponentDirective } from './directives/dynamic-component';
     AppRoutingModule,
     FontAwesomeModule
   ],
-  entryComponents: [TextContentComponent],
+  entryComponents: [TextContentComponent, SpecialContentComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -1,5 +1,6 @@
 import { ContentCollection, Content } from './content-collection'
-import { TextContentComponent } from '../content/text-content/text-content.component'
+import { TextContent } from './text-content'
+import * as specialContent from './special-content'
 
 export class Ps1ContentCollection implements ContentCollection {
 
@@ -10,7 +11,7 @@ export class Ps1ContentCollection implements ContentCollection {
   }
 
   getContentTypes(): (new()=>Content)[] {
-    return [TextContent];
+    return [TextContent, specialContent.SpecialContentDate];
   }
 
   getDefaultContentType(): (new()=>Content) {
@@ -25,27 +26,5 @@ export class Ps1ContentCollection implements ContentCollection {
   // set the content type
   setCurrentContent(c: Content): void{
     this.currContent = c;
-  }
-}
-
-export class TextContent implements Content {
-  private text: string = "";
-
-  constructor() {}
-
-  getDescription(): string {
-    return "text";
-  }
-
-  getComponent(): any {
-    return TextContentComponent;
-  }
-
-  getTerminalCode(): string {
-    return this.text;
-  }
-
-  setText(text: string): void {
-    this.text = text;
   }
 }
