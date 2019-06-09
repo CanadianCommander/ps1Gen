@@ -10,7 +10,7 @@ import { CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 })
 export class Ps1GraphicListComponent implements OnInit {
 
-  private ps1Elements: Ps1Element[];
+  public ps1Elements: Ps1Element[];
 
   constructor(private ps1Builder: Ps1BuilderService) { }
 

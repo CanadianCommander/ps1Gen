@@ -8,7 +8,7 @@ import { Ps1BuilderService } from '../service/ps1-builder.service'
 })
 export class Ps1StringDisplayComponent implements OnInit {
 
-  constructor(private ps1Builder: Ps1BuilderService) { }
+  constructor(public ps1Builder: Ps1BuilderService) { }
 
   ngOnInit() {
   }
