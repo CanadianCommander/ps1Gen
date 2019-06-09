@@ -1,14 +1,14 @@
-<div id="ps1-element-{{elementIndex}}" class="ps1-element p-1 mr-2 d-flex flex-column" [style.border-color]="ps1Element.color.getCurrentCSSColor()" (mouseleave)="hideColorPicker()">
+<div id="ps1-element-{{elementIndex}}" class="ps1-element p-1 mr-2 d-flex flex-column" [style.border-color]="ps1Element.color.getCurrentCSSColor()" (mouseleave)="hideColorPicker();hideContentPicker()">
   <span class="d-flex border-bottom">
     <ul class="nav col p-0">
       <li class="nav-item col text-center p-0">
         <!-- hack to fix: https://github.com/angular/components/pull/13360 -->
         <ng-content select="[slot=move-control]"></ng-content>
       </li>
-      <li class="nav-item border-left border-right col text-center p-0">
+      <li class="nav-item border-left border-right col text-center p-0" #showColorPickerElement>
         <fa-icon icon="palette" class="m-1 element-control color-control" size="lg" (click)="toggleColorPicker()"></fa-icon>
       </li>
-      <li class="nav-item border-right col text-center p-0">
+      <li class="nav-item border-right col text-center p-0" #showContentPickerElement>
         <fa-icon icon="cog" class="m-1 element-control special-control" size="lg" (click)="toggleContentPicker()"></fa-icon>
       </li>
       <li class="nav-item col text-center p-0">
@@ -16,7 +16,11 @@
       </li>
     </ul>
   </span>
-  <app-color-picker *ngIf="showColorPicker" [colorList]="ps1Element.color.getColorList()" [ps1Element]="ps1Element"></app-color-picker>
-  <app-content-picker *ngIf="showContentPicker" [ps1Element]="ps1Element"></app-content-picker>
+  <div class="color-picker-container" #colorPicker>
+    <app-color-picker [style.display]="colorPickerDisplay()" [colorList]="ps1Element.color.getColorList()" [ps1Element]="ps1Element"></app-color-picker>
+  </div>
+  <div class="content-picker-container" #contentPicker>
+    <app-content-picker [style.display]="contentPickerDisplay()" [ps1Element]="ps1Element" (close)="hideContentPicker()"></app-content-picker>
+  </div>
   <app-content-loader (keydown)="handleOnTab($event)" [ps1Element]="ps1Element"></app-content-loader>
 </div>

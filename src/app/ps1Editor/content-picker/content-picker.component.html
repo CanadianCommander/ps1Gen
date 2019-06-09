@@ -4,7 +4,7 @@
     <hr class="mt-0 mb-1">
   </div>
   <button *ngFor="let content of contentList; index as i"
-  type="button" class="btn mr-1 mb-1" [class.button-darkbg]="i % 2 == 0" (click)="selectContent(content)">
+  type="button" class="btn mr-1 mb-1" [class.button-darkbg]="i % 2 == 0" (click)="selectContent(content);hideSelf();">
     {{content.getDescription()}}
   </button>
 </div>

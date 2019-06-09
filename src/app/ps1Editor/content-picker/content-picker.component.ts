@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Ps1Element } from "../model/ps1-element"
 import { Content } from "../model/content-collection"
 
@@ -8,6 +8,7 @@ import { Content } from "../model/content-collection"
   styleUrls: ['./content-picker.component.scss']
 })
 export class ContentPickerComponent implements OnInit {
+  @Output() close: EventEmitter<any> = new EventEmitter;
   @Input() ps1Element: Ps1Element;
   public contentList: Content[] = [];
 
@@ -21,5 +22,9 @@ export class ContentPickerComponent implements OnInit {
 
   selectContent(newContent) {
     this.ps1Element.content.setCurrentContent(newContent);
+  }
+
+  hideSelf(): void {
+    this.close.emit(this);
   }
 }

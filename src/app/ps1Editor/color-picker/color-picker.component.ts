@@ -15,19 +15,9 @@ export class ColorPickerComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.ensureVisible();
   }
 
   setColor(event) {
     this.ps1Element.color.setCurrentColorIndex(<number>event.target.attributes["data-color-index"].value);
-  }
-
-  // ensure color picker is visible by adjusting position
-  private ensureVisible(): void {
-    let pos = $(this.container.nativeElement).position();
-    let width = $(this.container.nativeElement).width();
-    if (pos.left + width > $('body').width()) {
-      this.xOffset = $('body').width() - (pos.left + width) - 10;
-    }
   }
 }
