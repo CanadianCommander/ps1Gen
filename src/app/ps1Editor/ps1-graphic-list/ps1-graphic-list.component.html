@@ -1,7 +1,15 @@
 <button type="button" class="btn btn-danger mr-1 mb-1" (click)="clearElements()">Clear</button>
 <button type="button" class="btn btn-secondary mr-1 mb-1" (click)="addElement()">Add</button>
-<div class="ps1-edit-list p-1 d-flex mb-5" >
-  <app-ps1-editor-element *ngFor="let element of ps1Elements; index as i" [ps1Element]="element" [elementIndex]="i"></app-ps1-editor-element>
-  <div class="ps1-edit-list-scroll-padding">
+<div class="ps1-edit-list p-1 d-flex mb-5" cdkDropList cdkDropListOrientation="horizontal" cdkDropListLockAxis="x" (cdkDropListDropped)="handleDragNDrop($event)">
+  <div *ngFor="let element of ps1Elements; index as i;">
+    <div cdkDrag>
+      <app-ps1-editor-element  [ps1Element]="element" [elementIndex]="i">
+        <!-- hack to fix: https://github.com/angular/components/pull/13360 -->
+        <fa-icon slot="move-control" icon="arrows-alt" class="m-1 element-control move-control" size="lg" cdkDragHandle></fa-icon>
+      </app-ps1-editor-element>
+      <div class="element-place-holder ml-1 mr-1" *cdkDragPlaceholder></div>
+    </div>
+    <span style="display:none;">{{i}}</span> <!-- TODO why does this fix list reordering? -->
   </div>
+  <div class="ps1-edit-list-scroll-padding">
 </div>

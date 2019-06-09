@@ -2,7 +2,8 @@
   <span class="d-flex border-bottom">
     <ul class="nav col p-0">
       <li class="nav-item col text-center p-0">
-        <fa-icon icon="arrows-alt" class="m-1 element-control move-control" size="lg"></fa-icon>
+        <!-- hack to fix: https://github.com/angular/components/pull/13360 -->
+        <ng-content select="[slot=move-control]"></ng-content>
       </li>
       <li class="nav-item border-left border-right col text-center p-0">
         <fa-icon icon="palette" class="m-1 element-control color-control" size="lg" (click)="toggleColorPicker()"></fa-icon>

@@ -6,7 +6,7 @@
   border: 4px solid;
   background-color: $primary-background;
   box-shadow: 2px 2px 5px #2c3e50;
-  min-width: 130px;
+  min-width: 150px;
   height: 76px;
   transition: position 2s;
 
@@ -21,9 +21,5 @@
 
   .close-control:active {
     color: #c0392b;
-  }
-
-  .move-control:active {
-    cursor:move;
   }
 }

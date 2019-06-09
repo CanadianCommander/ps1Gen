@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { DragDropModule } from '@angular/cdk/drag-drop'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -36,6 +37,7 @@ import { ContentPickerComponent } from './ps1Editor/content-picker/content-picke
     ContentPickerComponent
   ],
   imports: [
+    DragDropModule,
     FormsModule,
     BrowserModule,
     AppRoutingModule,

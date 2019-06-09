@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Ps1Element } from "../model/ps1-element"
 import { Ps1BuilderService } from '../service/ps1-builder.service'
+import { CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-ps1-editor-graphic-list',
@@ -27,5 +28,9 @@ export class Ps1GraphicListComponent implements OnInit {
     {
       this.ps1Builder.deleteAllElements();
     }
+  }
+
+  handleDragNDrop(event:  CdkDragDrop<Ps1Element[]>) {
+    moveItemInArray(this.ps1Elements, event.previousIndex, event.currentIndex);
   }
 }
