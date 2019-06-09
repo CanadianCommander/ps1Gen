@@ -8,11 +8,11 @@ import { TextContent } from '../../model/text-content'
   templateUrl: './text-content.component.html',
   styleUrls: ['./text-content.component.scss']
 })
-export class TextContentComponent implements OnInit, ContentComponent {
+export class TextContentComponent extends ContentComponent implements OnInit {
   @Input() ps1Element: Ps1Element;
 
 
-  constructor() { }
+  constructor() { super() }
 
   ngOnInit() {
   }

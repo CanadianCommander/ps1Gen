@@ -1,3 +1,5 @@
-<div class="rounded element-text pr-2" contenteditable="true"
+<div class="rounded element-text pr-2 pl-1" contenteditable="true"
 (keydown)="preventNewLine($event)" (input)="updateText($event)"
-draggable="false"></div>
+draggable="false"
+[style.color]="getForegroundColor()"
+[style.background-color]="getBackgroundColor()"></div>

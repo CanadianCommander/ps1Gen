@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ContentComponent } from '../content-component'
 import { Ps1Element } from "../../model/ps1-element"
 
 @Component({
@@ -6,10 +7,10 @@ import { Ps1Element } from "../../model/ps1-element"
   templateUrl: './special-content.component.html',
   styleUrls: ['./special-content.component.scss']
 })
-export class SpecialContentComponent implements OnInit {
+export class SpecialContentComponent extends ContentComponent implements OnInit {
   @Input() ps1Element: Ps1Element;
 
-  constructor() { }
+  constructor() { super() }
 
   ngOnInit() {
   }

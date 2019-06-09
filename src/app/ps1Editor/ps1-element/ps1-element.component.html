@@ -1,4 +1,4 @@
-<div id="ps1-element-{{elementIndex}}" class="ps1-element p-1 mr-2 d-flex flex-column" [style.border-color]="ps1Element.color.getCurrentCSSColor()" (mouseleave)="hideColorPicker();hideContentPicker()">
+<div id="ps1-element-{{elementIndex}}" class="ps1-element p-1 mr-2 d-flex flex-column" (mouseleave)="hideColorPicker();hideContentPicker()">
   <span class="d-flex border-bottom">
     <ul class="nav col p-0">
       <li class="nav-item col text-center p-0">
@@ -17,7 +17,7 @@
     </ul>
   </span>
   <div class="color-picker-container" #colorPicker>
-    <app-color-picker [style.display]="colorPickerDisplay()" [colorList]="ps1Element.color.getColorList()" [ps1Element]="ps1Element"></app-color-picker>
+    <app-color-picker [style.display]="colorPickerDisplay()" [ps1Element]="ps1Element"></app-color-picker>
   </div>
   <div class="content-picker-container" #contentPicker>
     <app-content-picker [style.display]="contentPickerDisplay()" [ps1Element]="ps1Element" (close)="hideContentPicker()"></app-content-picker>

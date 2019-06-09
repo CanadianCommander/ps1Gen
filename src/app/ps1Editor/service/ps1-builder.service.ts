@@ -11,6 +11,7 @@ export class Ps1BuilderService {
   elements: Ps1Element[] = [];
 
   constructor() {
+    this.addDefaultElement();
   }
 
   getElementList(): Ps1Element[] {
@@ -19,20 +20,28 @@ export class Ps1BuilderService {
 
   getPs1String(): string {
     return this.elements.reduce((acc, el) => {
+      //foreground
       if (el.color.isNoColor())
       { // no color
         acc = acc + el.content.getCurrentContent().getTerminalCode();
       }
       else
       {
-        acc = acc + el.color.getCurrentTerminalColor() + el.content.getCurrentContent().getTerminalCode() + el.color.getTerminalResetCode();
+        acc = acc + el.color.getCurrentTerminalColorFg() + el.content.getCurrentContent().getTerminalCode() + el.color.getTerminalResetCode();
       }
+
+      //background
+      if (!el.backgroundColor.isNoColor())
+      {
+        acc = el.backgroundColor.getCurrentTerminalColorBg() + acc + el.backgroundColor.getTerminalResetCode();
+      }
+
       return acc
     }, "");
   }
 
   addDefaultElement() {
-    this.elements.push(new Ps1Element(new Ps1ContentCollection, new Ps1ColorPalette));
+    this.elements.push(new Ps1Element(new Ps1ContentCollection, new Ps1ColorPalette, new Ps1ColorPalette));
   }
 
   deleteElement(element) {

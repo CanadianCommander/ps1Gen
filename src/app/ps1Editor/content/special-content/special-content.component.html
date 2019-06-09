@@ -1,3 +1,5 @@
-<div class="special-content pl-1 pr-1">
-  <span>{{ps1Element.content.getCurrentContent().getDescription()}}</span>
+<div class="special-content pl-1 pr-1 m-0"
+[style.color]="getForegroundColor()"
+[style.background-color]="getBackgroundColor()">
+  {{ps1Element.content.getCurrentContent().getDescription()}}
 </div>

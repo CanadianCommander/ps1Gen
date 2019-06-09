@@ -1,6 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+
+// cdk / material
+import { MatTabsModule } from '@angular/material/tabs';
 import { DragDropModule } from '@angular/cdk/drag-drop'
 
 import { AppRoutingModule } from './app-routing.module';
@@ -37,9 +41,11 @@ import { ContentPickerComponent } from './ps1Editor/content-picker/content-picke
     ContentPickerComponent
   ],
   imports: [
+    MatTabsModule,
     DragDropModule,
     FormsModule,
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     FontAwesomeModule
   ],

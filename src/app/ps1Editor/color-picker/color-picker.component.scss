@@ -5,12 +5,18 @@
   flex-direction: row;
   align-content: baseline;
   flex-wrap: wrap;
-  border: 1px solid black;
+
+  border-radius: 5px;
+  border: 1px solid darken($secondary-background, 10%);
   background-color: $primary-background;
   box-shadow: 5px 5px 5px black;
 
-  width: 1026px;
-  height: 258px;
+  width: 996px;
+}
+
+.color-picker-area {
+  max-height: 258px;
+  align-content: flex-start;
 }
 
 .color-tile {
@@ -26,4 +32,14 @@
   border: 1px solid white;
   box-shadow: 2px 2px 2px black;
   z-index: 1;
+}
+
+.active-color-tile {
+  border: 1px solid white;
+  box-shadow: 3px 3px 2px $primary;
+  z-index: 1;
+}
+
+.color-picker-header {
+  flex: 0 0 100%;
 }

@@ -2,7 +2,7 @@ import { ColorPalette } from "./color-palette"
 
 export class Ps1ColorPalette implements ColorPalette{
   static readonly COLOR_MAP = [
-    {color: "#ecf0f1", code: "\\e[0m"}, // no color
+    {color: "#000000", code: "\\e[0m"}, // no color
     {color: "#000000", code: "\\033[38;5;16m"},
     {color: "#00005f", code: "\\033[38;5;17m"},
     {color: "#000087", code: "\\033[38;5;18m"},
@@ -261,8 +261,12 @@ export class Ps1ColorPalette implements ColorPalette{
     return Ps1ColorPalette.COLOR_MAP[this.currIndex].color;
   }
 
-  getCurrentTerminalColor(): string {
+  getCurrentTerminalColorFg(): string {
     return Ps1ColorPalette.COLOR_MAP[this.currIndex].code;
+  }
+
+  getCurrentTerminalColorBg(): string {
+    return Ps1ColorPalette.COLOR_MAP[this.currIndex].code.replace('[38;', '[48;');
   }
 
   getTerminalResetCode(): string {
