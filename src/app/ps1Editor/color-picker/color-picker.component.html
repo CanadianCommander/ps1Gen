@@ -3,13 +3,15 @@
     <mat-tab label="Foreground" >
       <div class="color-picker-area d-flex flex-column flex-wrap">
         <div *ngFor="let color of colorList; index as i" class="color-tile" [attr.data-color-index]="i" [style.background-color]="color"
-        (click)="setColor($event)" [class.active-color-tile]="ps1Element.color.getCurrentIndex() == i"></div>
+        (click)="setColor($event)" [class.active-color-tile]="ps1Element.color.getCurrentIndex() == i"
+        [class.no-color]="i == 0"></div>
       </div>
     </mat-tab>
     <mat-tab label="Background">
       <div class="color-picker-area d-flex flex-column flex-wrap">
         <div *ngFor="let color of backgroundColorList; index as i" class="color-tile" [attr.data-color-index]="i" [style.background-color]="color"
-        (click)="setColorBg($event)" [class.active-color-tile]="ps1Element.backgroundColor.getCurrentIndex() == i"></div>
+        (click)="setColorBg($event)" [class.active-color-tile]="ps1Element.backgroundColor.getCurrentIndex() == i"
+        [class.no-color]="i == 0"></div>
       </div>
     </mat-tab>
   </mat-tab-group>

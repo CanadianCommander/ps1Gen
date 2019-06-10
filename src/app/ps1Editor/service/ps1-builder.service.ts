@@ -23,20 +23,26 @@ export class Ps1BuilderService {
       //foreground
       if (el.color.isNoColor())
       { // no color
-        acc = acc + el.content.getCurrentContent().getTerminalCode();
+        if (!el.backgroundColor.isNoColor())
+        { // background color
+          acc = acc +  el.backgroundColor.getCurrentTerminalColorBg() + el.content.getCurrentContent().getTerminalCode() + el.backgroundColor.getTerminalResetCode();
+        } else
+        {// no color at all
+          acc = acc + el.content.getCurrentContent().getTerminalCode();
+        }
       }
       else
       {
-        acc = acc + el.color.getCurrentTerminalColorFg() + el.content.getCurrentContent().getTerminalCode() + el.color.getTerminalResetCode();
+        if (!el.backgroundColor.isNoColor())
+        { // background color
+          acc = acc +  el.backgroundColor.getCurrentTerminalColorBg() + el.color.getCurrentTerminalColorFg() +
+                el.content.getCurrentContent().getTerminalCode() + el.color.getTerminalResetCode() + el.backgroundColor.getTerminalResetCode();
+        } else {
+          acc = acc + el.color.getCurrentTerminalColorFg() + el.content.getCurrentContent().getTerminalCode() + el.color.getTerminalResetCode();
+        }
       }
 
-      //background
-      if (!el.backgroundColor.isNoColor())
-      {
-        acc = el.backgroundColor.getCurrentTerminalColorBg() + acc + el.backgroundColor.getTerminalResetCode();
-      }
-
-      return acc
+      return acc;
     }, "");
   }
 

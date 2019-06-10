@@ -40,6 +40,10 @@
   z-index: 1;
 }
 
+.no-color {
+  background-color: transparent !important;
+}
+
 .color-picker-header {
   flex: 0 0 100%;
 }

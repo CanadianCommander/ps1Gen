@@ -43,4 +43,8 @@
     background-color: darken($ps1-special-bg, 10%);
   }
 
+  .active-content {
+    border: 2px solid darken($ps1-special-bg, 25%);
+    box-shadow: 2px 2px 2px black;
+  }
 }

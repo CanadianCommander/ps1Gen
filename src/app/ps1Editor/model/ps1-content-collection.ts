@@ -1,5 +1,5 @@
 import { ContentCollection, Content } from './content-collection'
-import { TextContent } from './text-content'
+import * as textContent from './text-content'
 import * as specialContent from './special-content'
 
 export class Ps1ContentCollection implements ContentCollection {
@@ -11,11 +11,27 @@ export class Ps1ContentCollection implements ContentCollection {
   }
 
   getContentTypes(): (new()=>Content)[] {
-    return [TextContent, specialContent.SpecialContentDate];
+    return [
+      textContent.TextContent,
+      textContent.BlinkTextContent,
+      textContent.BoldlineTextContent,
+      textContent.UnderlineTextContent,
+      specialContent.SpecialContentShell,
+      specialContent.SpecialContentUsername,
+      specialContent.SpecialContentCurrentDirName,
+      specialContent.SpecialContentCurrentDir,
+      specialContent.SpecialContentHost,
+      specialContent.SpecialContentShortHost,
+      specialContent.SpecialContentTime,
+      specialContent.SpecialContentTime24,
+      specialContent.SpecialContentDate,
+      specialContent.SpecialContentBashVersion,
+      specialContent.SpecialContentCurrentRootIndicator
+    ];
   }
 
   getDefaultContentType(): (new()=>Content) {
-    return TextContent
+    return textContent.TextContent
   }
 
   // get the current content type
