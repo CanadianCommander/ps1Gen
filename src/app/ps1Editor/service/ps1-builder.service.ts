@@ -35,7 +35,7 @@ export class Ps1BuilderService {
       {
         if (!el.backgroundColor.isNoColor())
         { // background color
-          acc = acc +  el.backgroundColor.getCurrentTerminalColorBg() + el.color.getCurrentTerminalColorFg() +
+          acc = acc + el.backgroundColor.getCurrentTerminalColorBg() + el.color.getCurrentTerminalColorFg() +
                 el.content.getCurrentContent().getTerminalCode() + el.color.getTerminalResetCode() + el.backgroundColor.getTerminalResetCode();
         } else {
           acc = acc + el.color.getCurrentTerminalColorFg() + el.content.getCurrentContent().getTerminalCode() + el.color.getTerminalResetCode();
