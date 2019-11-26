@@ -262,15 +262,15 @@ export class Ps1ColorPalette implements ColorPalette{
   }
 
   getCurrentTerminalColorFg(): string {
-    return "\\[" + Ps1ColorPalette.COLOR_MAP[this.currIndex].code;
+    return "\\[" + Ps1ColorPalette.COLOR_MAP[this.currIndex].code + "\\]";
   }
 
   getCurrentTerminalColorBg(): string {
-    return "\\[" + Ps1ColorPalette.COLOR_MAP[this.currIndex].code.replace('[38;', '[48;');
+    return "\\[" + Ps1ColorPalette.COLOR_MAP[this.currIndex].code.replace('[38;', '[48;') + "\\]";
   }
 
   getTerminalResetCode(): string {
-    return "\\e[0m\\]";
+    return "\\[\\e[0m\\]";
   }
 
   isNoColor(): boolean {
